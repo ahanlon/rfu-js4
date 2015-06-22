@@ -13,8 +13,8 @@ var numVic = prompt("How many disaster victims do you wish to enter?");
 // 	vicStreet.push(street);
 // }
 
-var victims = {};
-var volunteers = {};
+var victims = [];
+var volunteers = [];
 
 
 for (i = 1; i <= numVic; i++) {
