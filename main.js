@@ -63,7 +63,11 @@ console.log(volunteers);
 alert("Number of Victims: " + numVic + "\nNumber of Volunteers: " + numVolunteer);
 
 for ( i = 0; i < numVic; i++){
-	alert('Here is the victim information: ' + victims[i].name);
+	alert('Here is the victim name: ' + victims[i].name);
+}
+
+for ( i = 0; i < numVolunteer; i++){
+	alert('Here is the volunteer name: ' + volunteers[i].name);
 }
 
 
