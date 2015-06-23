@@ -1,3 +1,119 @@
+// Bonus I
+
+var victims = [];
+var volunteers = [];
+
+
+var askVic = function() {
+	var newVic = {};
+		newVic.name = prompt("Enter victim Name:");
+		newVic.phone = prompt("Enter victim Phone Number:");
+		newVic.street = prompt("Enter victim Street:")
+		victims.push(newVic);
+}
+askVic();
+
+
+while (confirm('Would you like to continue entering victim information?') === true){
+	askVic();
+}
+
+
+console.log(victims);
+
+var numVolunteer = prompt("How many volunteers do you wish to enter?")
+
+for (i = 1; i <= numVolunteer; i++) {
+	var newVol = {};
+	newVol.name = prompt("Enter volunteer Name:");
+	newVol.phone = prompt("Enter volunteer Phone Number:");
+	newVol.street = prompt("Enter volunteer Street:")
+	volunteers.push(newVol);
+}
+
+console.log(volunteers);
+
+alert("Number of Victims: " + victims['length'] + "\nNumber of Volunteers: " + numVolunteer);
+
+for ( i = 0; i < victims['length']; i++){
+	alert('Here is the victim name: ' + victims[i].name);
+}
+
+for ( i = 0; i < numVolunteer; i++){
+	alert('Here is the volunteer name: ' + volunteers[i].name);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//This is the code for the bonus portion of Step #3
+
+// var numVic = prompt("How many disaster victims do you wish to enter?");
+
+// var victims = [];
+// var volunteers = [];
+
+// for (i = 1; i <= numVic; i++) {
+// 	var newVic = {};
+// 	newVic.name = prompt("Enter victim Name:");
+// 	newVic.phone = prompt("Enter victim Phone Number:");
+// 	newVic.street = prompt("Enter victim Street:")
+// 	victims.push(newVic);
+// }
+// console.log(victims);
+
+// var numVolunteer = prompt("How many volunteers do you wish to enter?")
+
+// for (i = 1; i <= numVolunteer; i++) {
+// 	var newVol = {};
+// 	newVol.name = prompt("Enter volunteer Name:");
+// 	newVol.phone = prompt("Enter volunteer Phone Number:");
+// 	newVol.street = prompt("Enter volunteer Street:")
+// 	volunteers.push(newVol);
+// }
+
+// console.log(volunteers);
+
+// alert("Number of Victims: " + numVic + "\nNumber of Volunteers: " + numVolunteer);
+
+// for ( i = 0; i < numVic; i++){
+// 	alert('Here is the victim name: ' + victims[i].name);
+// }
+
+// for ( i = 0; i < numVolunteer; i++){
+// 	alert('Here is the volunteer name: ' + volunteers[i].name);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // This block of code works using multiple arrays.
 
 // var numVic = prompt("How many disaster victims do you wish to enter?");
@@ -31,46 +147,6 @@
 // }
 
 // alert("Number of Victims: " + numVic + "\nNumber of Volunteers: " + numVolunteer + "\nVictim Names: " + vicName + "\nVolunteer Names: " + vltrName);
-
-
-
-var numVic = prompt("How many disaster victims do you wish to enter?");
-
-var victims = [];
-var volunteers = [];
-
-for (i = 1; i <= numVic; i++) {
-	var newVic = {};
-	newVic.name = prompt("Enter victim Name:");
-	newVic.phone = prompt("Enter victim Phone Number:");
-	newVic.street = prompt("Enter victim Street:")
-	victims.push(newVic);
-}
-console.log(victims);
-
-var numVolunteer = prompt("How many volunteers do you wish to enter?")
-
-for (i = 1; i <= numVolunteer; i++) {
-	var newVol = {};
-	newVol.name = prompt("Enter volunteer Name:");
-	newVol.phone = prompt("Enter volunteer Phone Number:");
-	newVol.street = prompt("Enter volunteer Street:")
-	volunteers.push(newVol);
-}
-
-console.log(volunteers);
-
-alert("Number of Victims: " + numVic + "\nNumber of Volunteers: " + numVolunteer);
-
-for ( i = 0; i < numVic; i++){
-	alert('Here is the victim name: ' + victims[i].name);
-}
-
-for ( i = 0; i < numVolunteer; i++){
-	alert('Here is the volunteer name: ' + volunteers[i].name);
-}
-
-
 
 
 
