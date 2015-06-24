@@ -47,6 +47,32 @@ for ( i = 0; i < volunteers['length']; i++){
 }
 
 
+// After all of the above, prompt the user to enter the name of a person in need. 
+//Then display an alert that lists all the volunteers that are available to help on the same street.
+
+var matchName = prompt("Enter the name of a person in need:");
+var meetNeed = function(){
+	for (var i = 0; i < victims['length']; i++){
+		if (victims[i].name === matchName){
+			return victims[i].street;
+		codeonsole.log(victims[i].street);
+		}
+		else {
+			alert("No victime found!");
+		}
+	};
+
+	for ( var i = 0; i < volunteer['length']; i++){
+		if (volunteer[i].street === victims[i].street){
+			return newVol[i];
+			console.log(newVol[i]);
+		}
+		else {
+			alert("There are no volunteers on that street.");
+		}
+	};
+};
+meetNeed();
 
 
 
@@ -61,6 +87,8 @@ for ( i = 0; i < volunteers['length']; i++){
 
 
 
+
+////////////////////////////////////////////////////////////////////////////////////
 
 
 //This is the code for the bonus portion of Step #3
@@ -104,15 +132,7 @@ for ( i = 0; i < volunteers['length']; i++){
 
 
 
-
-
-
-
-
-
-
-
-
+/////////////////////////////////////////////////////////////////////////////
 
 
 
