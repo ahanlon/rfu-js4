@@ -50,29 +50,37 @@ for ( i = 0; i < volunteers['length']; i++){
 // After all of the above, prompt the user to enter the name of a person in need. 
 //Then display an alert that lists all the volunteers that are available to help on the same street.
 
-var matchName = prompt("Enter the name of a person in need:");
+var askName = prompt("Enter the name of a person in need:");
+ 
+var vicStreet = [];
+var volMatch = [];
+
 var meetNeed = function(){
 	for (var i = 0; i < victims['length']; i++){
-		if (victims[i].name === matchName){
-			return victims[i].street;
-		codeonsole.log(victims[i].street);
-		}
-		else {
-			alert("No victime found!");
+		if (victims[i].name === askName){
+			var vicStreet = victims[i].street;
+			console.log(victims[i].street);
 		}
 	};
 
-	for ( var i = 0; i < volunteer['length']; i++){
-		if (volunteer[i].street === victims[i].street){
-			return newVol[i];
-			console.log(newVol[i]);
+	for ( var i = 0; i < volunteers['length']; i++){
+		if (volunteers[i].street === vicStreet){
+			volMatch.push(volunteers[i].name);
+			console.log(volunteers[i].name);
 		}
-		else {
-			alert("There are no volunteers on that street.");
-		}
-	};
+	}
+
+	if (vicStreet === null){
+		alert("There is no victim with that name.");
+	}
+	else if (volMatch === null){
+		alert("There are no volunteers on that street.");
+	}
+	else {
+		alert('Here is a list of available volunters on that street:\n' +  volMatch);
+	}
 };
-meetNeed();
+meetNeed(askName);
 
 
 
