@@ -18,28 +18,31 @@ while (confirm('Would you like to continue entering victim information?') === tr
 	askVic();
 }
 
+console.log(victims); //this is checking that the objects are pushing to the array
 
-console.log(victims);
-
-var numVolunteer = prompt("How many volunteers do you wish to enter?")
-
-for (i = 1; i <= numVolunteer; i++) {
+var askVol = function() {
 	var newVol = {};
 	newVol.name = prompt("Enter volunteer Name:");
 	newVol.phone = prompt("Enter volunteer Phone Number:");
 	newVol.street = prompt("Enter volunteer Street:")
 	volunteers.push(newVol);
 }
+askVol();
+
+while (confirm('Would you like to continue entering volunteer information?') === true){
+	askVol();
+}
 
 console.log(volunteers);
 
-alert("Number of Victims: " + victims['length'] + "\nNumber of Volunteers: " + numVolunteer);
+
+alert("Number of Victims: " + victims['length'] + "\nNumber of Volunteers: " + volunteers['length']);
 
 for ( i = 0; i < victims['length']; i++){
 	alert('Here is the victim name: ' + victims[i].name);
 }
 
-for ( i = 0; i < numVolunteer; i++){
+for ( i = 0; i < volunteers['length']; i++){
 	alert('Here is the volunteer name: ' + volunteers[i].name);
 }
 
