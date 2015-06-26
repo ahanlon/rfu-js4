@@ -36,15 +36,19 @@ while (confirm('Would you like to continue entering volunteer information?') ===
 console.log(volunteers);
 
 
-alert("Number of Victims: " + victims['length'] + "\nNumber of Volunteers: " + volunteers['length']);
+alert("Number of Victims: " + victims.length + "\nNumber of Volunteers: " + volunteers.length);
 
+var vicList = [];
 for ( i = 0; i < victims['length']; i++){
-	alert('Here is the victim name: ' + victims[i].name);
+	vicList.push(victims[i].name);
 }
+alert("Here is the list of victims:\n" + vicList);
 
+var volList = [];
 for ( i = 0; i < volunteers['length']; i++){
-	alert('Here is the volunteer name: ' + volunteers[i].name);
+	volList.push(volunteers[i].name);
 }
+alert("Here is the list of volunteers:\n" + volList);
 
 
 // After all of the above, prompt the user to enter the name of a person in need. 
@@ -56,31 +60,29 @@ var vicStreet = [];
 var volMatch = [];
 
 var meetNeed = function(){
-	for (var i = 0; i < victims['length']; i++){
+	for (var i = 0; i < victims.length; i++){
 		if (victims[i].name === askName){
-			var vicStreet = victims[i].street;
-			console.log(vicStreet);
+			vicStreet = victims[i].street;
 		}
-	};
+	}
 
-	for ( var i = 0; i < volunteers['length']; i++){
+	for ( var i = 0; i < volunteers.length; i++){
 		if (volunteers[i].street === vicStreet){
 			volMatch.push(volunteers[i].name);
-			console.log(volunteers[i].name);
 		}
 	}
 
-	if ( (vicStreet === null) || (vicStreet === undefined) ) {
+	if ( (vicStreet.length === 0 ) ) {
 		alert("There is no victim with that name.");
 	}
-	else if ( (volMatch === null) || (volMatch === undefined) ){
+	else if ( volMatch.length === 0 ){
 		alert("There are no volunteers on that street.");
 	}
 	else {
 		alert('Here is a list of available volunters on that street:\n' +  volMatch);
 	}
 };
-meetNeed(askName);
+meetNeed();
 
 
 
