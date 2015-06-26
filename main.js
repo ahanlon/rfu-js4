@@ -1,4 +1,4 @@
-// Bonus I
+// Bonus I & II
 
 var victims = [];
 var volunteers = [];
@@ -59,7 +59,7 @@ var meetNeed = function(){
 	for (var i = 0; i < victims['length']; i++){
 		if (victims[i].name === askName){
 			var vicStreet = victims[i].street;
-			console.log(victims[i].street);
+			console.log(vicStreet);
 		}
 	};
 
@@ -70,10 +70,10 @@ var meetNeed = function(){
 		}
 	}
 
-	if (vicStreet === null){
+	if ( (vicStreet === null) || (vicStreet === undefined) ) {
 		alert("There is no victim with that name.");
 	}
-	else if (volMatch === null){
+	else if ( (volMatch === null) || (volMatch === undefined) ){
 		alert("There are no volunteers on that street.");
 	}
 	else {
@@ -81,14 +81,6 @@ var meetNeed = function(){
 	}
 };
 meetNeed(askName);
-
-
-
-
-
-
-
-
 
 
 
